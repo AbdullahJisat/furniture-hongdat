@@ -1,0 +1,99 @@
+<!-- BEGIN PAGE HEADER-->
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a ui-sref="dashboard">Home</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a ui-sref="image_slider">Image Slider</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a ui-sref="add_image_slider">Add Image Slider</a>
+            <i class="fa fa-circle"></i>
+        </li>
+
+    </ul>
+
+</div>
+<h3 class="page-title"> Add Image Slider
+
+</h3>
+<!-- END PAGE HEADER-->
+<!-- BEGIN MAIN CONTENT -->
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN PORTLET-->
+        <div class="portlet box yellow-crusta">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-gift"></i>Add Image Slider</div>
+                <div class="tools">
+                    <a href="javascript:;" class="collapse"> </a>
+                    <a href="javascript:;" class="reload"> </a>
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <div class="pageloader" style="display:none;">
+                </div>
+                <form id="add_slider" class="form-horizontal form-bordered" name="add_slider" ng-submit="submit(add_slider.$valid)" novalidate>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Title</label>
+                        <div class="col-md-4">
+                            <div class="input-icon right">
+                                <input type="text" class="form-control" name="title" id="title" ng-model="title"> </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Description</label>
+                        <div class="col-md-4">
+                            <div class="input-icon right">
+                                <textarea rows="3" cols="50" type="text" class="form-control"  name="description" id="description" ng-model="description"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Button Text</label>
+                        <div class="col-md-4">
+                            <div class="input-icon right">
+                                <input type="text" class="form-control" name="button_text" id="button_text" ng-model="button_text"> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Button Link</label>
+                        <div class="col-md-4">
+                            <div class="input-icon right">
+                                <input type="text" class="form-control" name="button_link" id="button_link" ng-model="button_link"> </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Image<span class="required" aria-required="true">*</span></label>
+                        <div class="col-md-4">
+                            <div class="input-icon right">
+                                <input type="file" file-model="slider_image" class="form-control" ng-class="{'has-error': (add_slider.slider_image.$invalid && add_slider.slider_image.$dirty)}" name="slider_image" id="slider_image" ng-model="slider_image" required> </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-actions">
+                        <div class="row">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button type="submit" id="submit" class="btn btn-color">
+                                    <i class="fa fa-check"></i> Submit</button>
+                                <button ng-click="goback()" type="button" class="btn default">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        <!-- END PORTLET-->
+    </div>
+</div>
+
+

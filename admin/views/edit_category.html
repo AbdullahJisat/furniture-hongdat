@@ -1,0 +1,164 @@
+<!-- BEGIN PAGE HEADER-->
+
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a ui-sref="dashboard">Home</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a ui-sref="category">Category</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a ui-sref="edit_category">Edit Category</a>
+            <i class="fa fa-circle"></i>
+        </li>
+
+    </ul>
+
+</div>
+<h3 class="page-title"> Edit Category
+
+</h3>
+<!-- END PAGE HEADER-->
+<!-- BEGIN MAIN CONTENT -->
+
+<form id="edit_category" class="form-horizontal form-bordered" name="edit_category" ng-submit="edit(edit_category.$valid)" novalidate>
+
+    <div class="m-heading-1 border-green m-bordered" style="margin-top:20px;">
+
+        <div class="form-group">
+            <div class="col-md-4">
+                <label class="control-edit-label col-md-12"><b>TITLE</b></label>
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <input type="text" class="form-control" name="title" id="title"  ng-model="title" required> </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <label class="control-edit-label col-md-12"><b>TYPE</b></label>
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <!-- data-ng-options="cate.title for cate in categories track by cate.id" -->
+                        <select
+                            class="form-control"
+                            name="type"
+                            id="type"
+                            ng-model="type"
+                            required
+                        >
+                            <option value="">Select Type</option>
+                            <option value="Blog">Blog</option>
+                            <option value="Product">Product</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <label class="control-edit-label col-md-12"><b>DESCRIPTION</b></label>
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <input type="text" class="form-control" name="description" id="description" ng-model="description"> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="m-heading-1 border-green m-bordered" style="margin-top:20px;">
+
+        <div class="form-group">
+            <div class="col-md-6">
+                <label class="control-edit-label col-md-12"><b>META TITLE</b></label>
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <input type="text" class="form-control" name="meta_title" id="meta_title"  ng-model="meta_title"> </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label class="control-edit-label col-md-12"><b>META KEYWORD</b></label>
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <input type="text" class="form-control" name="meta_keyword" id="meta_keyword" ng-model="meta_keyword"> </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label class="control-edit-label col-md-12"><b>META DESCRIPTION</b></label>
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <input type="text" class="form-control" name="meta_description" id="meta_description" ng-model="meta_description"> </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label class="control-edit-label col-md-12"><b>URL</b></label>
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <input type="text" class="form-control" name="slug" id="slug" ng-model="slug"> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="m-heading-1 border-green m-bordered" style="margin-top:20px;">
+        <div class="form-group">
+            <div class="col-md-6">
+                <label class="control-edit-label col-md-12"><b>MAIN IMAGE</b></label>
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <img ng-src="./{{edit_image}}" alt="No Image" height="50" width="50">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label class="control-edit-label col-md-12"><b>CHANGE IMAGE</b></label>
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <input type="file" file-model="image" class="form-control" name="image" id="image" ng-model="image"> </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-6">
+                <label class="control-edit-label col-md-12"><b>TITLE</b></label>
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <input type="text" class="form-control" name="image_title" id="image_title" ng-model="image_title"> </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label class="control-edit-label col-md-12"><b>ALT TAG</b></label>
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <input type="text" class="form-control" name="alt_tag" id="alt_tag" ng-model="alt_tag"> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="m-heading-1 border-green m-bordered" style="margin-top:20px;">
+        <div class="form-group">
+            <div class="col-md-6">
+                <label class="control-edit-label col-md-12"><b>STATUS</b></label>
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <switch name="active" ng-model="active" on="Active" off="Inactive" class="wide" ng-change="changeCallback"></switch>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-actions">
+        <div class="row">
+            <div class="col-md-offset-9" style="margin-left: 73%!important;">
+                <button type="submit" id="submit" class="btn btn-color">
+                    <i class="fa fa-check"></i> Submit</button>
+                <button ng-click="goback()" type="button" class="btn default">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+</form>

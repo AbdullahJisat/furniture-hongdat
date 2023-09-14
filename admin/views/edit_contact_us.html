@@ -1,0 +1,101 @@
+<!-- BEGIN PAGE HEADER-->
+
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a ui-sref="dashboard">Home</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a ui-sref="contact_us">Contact Us</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a ui-sref="edit_contact_us">Edit Contact Us</a>
+            <i class="fa fa-circle"></i>
+        </li>
+
+    </ul>
+
+</div>
+<h3 class="page-title"> Edit Contact Us
+
+</h3>
+<!-- END PAGE HEADER-->
+<!-- BEGIN MAIN CONTENT -->
+
+
+<form id="edit_contact_us" class="form-horizontal form-bordered" name="edit_contact_us" ng-submit="edit(edit_contact_us.$valid)" novalidate>
+    <div class="m-heading-1 border-green m-bordered" style="margin-top:20px;">
+        <div class="form-group">
+            <div class="col-md-6">
+                <label class="control-edit-label col-md-12"><b>SHOWROOM ADDRESS</b></label>
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <input type="text" class="form-control" name="showroom_address" id="showroom_address" ng-model="showroom_address" required> </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label class="control-edit-label col-md-12"><b>FACTORY ADDRESS</b></label>
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <input type="text" class="form-control" name="factory_address" id="factory_address" ng-model="factory_address"> </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label class="control-edit-label col-md-12"><b>EMAIL</b></label>
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <input type="email" class="form-control" name="email" id="email" ng-model="email" required> </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-6">
+                <label class="control-edit-label col-md-12"><b>PHONE</b></label>
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <input type="text" class="form-control" name="phone" id="phone" ng-model="phone" required> </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label class="control-edit-label col-md-12"><b>MOBILE</b></label>
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <input type="text" class="form-control" name="mobile" id="mobile" ng-model="mobile"> </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label class="control-edit-label col-md-12"><b>FAX</b></label>
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <input type="text" class="form-control" name="fax" id="fax" ng-model="fax"> </div>
+                </div>
+            </div>
+      
+
+
+
+
+
+        </div>
+    </div>
+
+    <div class="form-actions">
+        <div class="row">
+            <div class="col-md-offset-9" style="margin-left: 73%!important;">
+                <button type="submit" id="submit" class="btn btn-color">
+                    <i class="fa fa-check"></i> Submit</button>
+                <button ng-click="goback()" type="button" class="btn default">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+
+</form>
+
+
+
+

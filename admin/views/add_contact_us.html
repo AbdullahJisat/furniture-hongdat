@@ -1,0 +1,138 @@
+<!-- BEGIN PAGE HEADER-->
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a ui-sref="dashboard">Home</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a ui-sref="contact_us">Contact Us</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a ui-sref="add_contact_us">Add Contact Us</a>
+            <i class="fa fa-circle"></i>
+        </li>
+
+    </ul>
+
+</div>
+<h3 class="page-title"> Add Contact Us
+
+</h3>
+<!-- END PAGE HEADER-->
+<!-- BEGIN MAIN CONTENT -->
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN PORTLET-->
+        <div class="portlet box yellow-crusta">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-gift"></i>Add Contact Us</div>
+                <div class="tools">
+                    <a href="javascript:;" class="collapse"> </a>
+                    <a href="javascript:;" class="reload"> </a>
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <div class="pageloader" style="display:none;">
+                </div>
+                <form id="add_contact_us" class="form-horizontal form-bordered" name="add_contact_us" ng-submit="submit(add_contact_us.$valid)" novalidate>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Address<span class="required" aria-required="true">*</span></label>
+                        <div class="col-md-4">
+                            <div class="input-icon right">
+                                <input type="text" class="form-control" name="address" id="address" ng-model="address" required> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Email<span class="required" aria-required="true">*</span></label>
+                        <div class="col-md-4">
+                            <div class="input-icon right">
+                                <input type="email" class="form-control" name="email" id="email" ng-model="email" required> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Phone<span class="required" aria-required="true">*</span></label>
+                        <div class="col-md-4">
+                            <div class="input-icon right">
+                                <input type="text" class="form-control" name="phone" id="phone" ng-model="phone" required> 
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Admin Email<span class="required" aria-required="true">*</span></label>
+                        <div class="col-md-4">
+                            <div class="input-icon right">
+                                <input type="email" class="form-control" name="admin_email" id="admin_email" ng-model="admin_email" required> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Sending Email<span class="required" aria-required="true">*</span></label>
+                        <div class="col-md-4">
+                            <div class="input-icon right">
+                                <input type="email" class="form-control" name="sending_email" id="sending_email" ng-model="sending_email" required> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Sending Email Password<span class="required" aria-required="true">*</span></label>
+                        <div class="col-md-4">
+                            <div class="input-icon right">
+                                <input type="text" class="form-control" name="sending_email_password" id="sending_email_password" ng-model="sending_email_password" required> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Sender Name<span class="required" aria-required="true">*</span></label>
+                        <div class="col-md-4">
+                            <div class="input-icon right">
+                                <input type="text" class="form-control" name="sender_name" id="sender_name" ng-model="sender_name" required> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Mail Host<span class="required" aria-required="true">*</span></label>
+                        <div class="col-md-4">
+                            <div class="input-icon right">
+                                <input type="text" class="form-control" name="mail_host" id="mail_host" ng-model="mail_host" required> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Port<span class="required" aria-required="true">*</span></label>
+                        <div class="col-md-4">
+                            <div class="input-icon right">
+                                <input type="text" class="form-control" name="port" id="port" ng-model="port" required> 
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <div class="row">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button type="submit" id="submit" class="btn btn-color">
+                                    <i class="fa fa-check"></i> Submit</button>
+                                <button ng-click="goback()" type="button" class="btn default">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        <!-- END PORTLET-->
+    </div>
+</div>
+
+
+

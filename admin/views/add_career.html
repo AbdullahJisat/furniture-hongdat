@@ -1,0 +1,86 @@
+<!-- BEGIN PAGE HEADER-->
+
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a ui-sref="dashboard">Home</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a ui-sref="career">Careers</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a ui-sref="add_career">Add Career</a>
+            <i class="fa fa-circle"></i>
+        </li>
+
+    </ul>
+
+</div>
+<h3 class="page-title"> Add Career
+
+</h3>
+<!-- END PAGE HEADER-->
+
+<!-- BEGIN MAIN CONTENT -->
+<form id="add_career" class="form-horizontal form-bordered" name="add_career" ng-submit="submit(add_career.$valid)" novalidate>
+
+
+
+    <div class="m-heading-1 border-green m-bordered" style="margin-top:20px;">
+
+        <div class="form-group">
+            <div class="col-md-6">
+                <label class="control-edit-label col-md-12"><b>POSITION</b></label>
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <input type="text" class="form-control" name="position" id="position" ng-model="position" required> </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label class="control-edit-label col-md-12"><b>APPLICATION EMAIL</b></label>
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <input type="text" class="form-control" name="application_email" id="application_email" ng-model="application_email" required></div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label class="control-edit-label col-md-12"><b>EXPIRY DATE</b></label>
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <input type="text" class="form-control" name="expiry_date" id="expiry_date" ng-model="expiry_date" required>  </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-9">
+                <label class="control-edit-label col-md-12"><b>CONTENT</b></label>
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <textarea rows="5" cols="50" type="text" class="form-control summernote"  name="description" id="description" ng-model="description"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-actions">
+        <div class="row">
+            <div class="col-md-offset-9" style="margin-left: 73%!important;">
+                <button type="submit" id="submit" class="btn btn-color">
+                    <i class="fa fa-check"></i> Submit</button>
+                <button ng-click="goback()" type="button" class="btn default">Cancel</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+
+
+

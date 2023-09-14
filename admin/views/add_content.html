@@ -1,0 +1,423 @@
+<style>
+    .reschedule-btn {
+        background-color: #4792f1 !important;
+        border-radius: 12px !important;
+        color: #fff;
+    }
+    .control-edit-label {
+        margin-bottom: 0;
+        padding-top: 7px;
+        width: 100%;
+    }
+    .input-group-addon {
+        cursor: pointer;
+    }
+    .input-group-addon > i {
+        color: #242527 !important;
+    }
+</style>
+<!-- BEGIN PAGE HEADER-->
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a ui-sref="dashboard">Home</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a ui-sref="contents">Contents</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a ui-sref="add_content">Add Content</a>
+            <i class="fa fa-circle"></i>
+        </li>
+    </ul>
+</div>
+<h3 class="page-title">Add Content</h3>
+<!-- END PAGE HEADER-->
+<!-- BEGIN MAIN CONTENT -->
+
+<!--begin::Services Modal-->
+<div
+    class="modal fade"
+    id="m_image"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+>
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="model-title-order">Add Images</h5>
+                <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                >
+                    <span aria-hidden="true"> &times; </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <span class="error_span" ng-show="show_error">{{err_msg}}</span>
+                <form
+                    id="images_upload"
+                    name="images_upload"
+                    method="post"
+                    novalidate
+                >
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-2 col-xs-6">
+                                <label
+                                    >IMAGE<span
+                                        class="required"
+                                        aria-required="true"
+                                        >*</span
+                                    ></label
+                                >
+                                <input
+                                    type="file"
+                                    file-model="doc_image"
+                                    class="form-control"
+                                    name="doc_image"
+                                    id="doc_image"
+                                    ng-model="doc_image"
+                                    required
+                                />
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-2 col-xs-6">
+                                <label
+                                    >TITLE<span
+                                        class="required"
+                                        aria-required="true"
+                                        >*</span
+                                    ></label
+                                >
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    name="img_title"
+                                    id="img_title"
+                                    ng-model="img_title"
+                                />
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-2 col-xs-6">
+                                <label>Action</label>
+                                <button
+                                    type="button"
+                                    ng-click="addtoImage()"
+                                    class="btn btn-primary form-control"
+                                >
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                        <div
+                            id="printable_area"
+                            class="row"
+                            style="padding-top: 15px"
+                        >
+                            <table class="table table-striped services-model">
+                                <thead>
+                                    <tr>
+                                        <th>Url</th>
+                                        <th>Title</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="image in images">
+                                        <td>{{ image.image_path}}</td>
+                                        <td>{{ image.image_title}}</td>
+
+                                        <td>
+                                            <span ng-click="removeImage($index)"
+                                                ><i
+                                                    class="fa fa-trash"
+                                                    aria-hidden="true"
+                                                ></i
+                                            ></span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div
+                class="modal-footer"
+                style="border-top: 0px solid #e5e5e5 !important"
+            >
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                    style="margin-top: 10px"
+                >
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end::Modal-->
+
+<form
+    id="add_content"
+    class="form-horizontal form-bordered"
+    name="add_content"
+    ng-submit="submit(add_content.$valid)"
+    novalidate
+>
+    <div class="m-heading-1 border-green m-bordered" style="margin-top: 20px">
+        <div class="form-group">
+            <div class="col-md-6">
+                <label class="control-edit-label col-md-12"><b>MENU</b></label>
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <select
+                            class="form-control"
+                            name="menu"
+                            id="menu"
+                            data-ng-options="cmenu.name for cmenu in content_menu track by cmenu.mid"
+                            data-ng-model="menu"
+                            required
+                        >
+                            <option style="display: none" value="">
+                                Select Menu
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label class="control-edit-label col-md-12"
+                    ><b>Category</b></label
+                >
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <select
+                            class="form-control"
+                            name="category"
+                            id="category"
+                            data-ng-options="cate.title for cate in categories track by cate.id"
+                            data-ng-model="category"
+                            required
+                        >
+                            <option style="display: none" value="">
+                                Select Category
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="m-heading-1 border-green m-bordered" style="margin-top: 20px">
+        <div class="form-group">
+            <div class="col-md-6">
+                <label class="control-edit-label col-md-12"><b>TITLE</b></label>
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="title"
+                            id="title"
+                            ng-model="title"
+                            required
+                        />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label class="control-edit-label col-md-12"
+                    ><b>DESCRIPTION</b></label
+                >
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="description"
+                            id="description"
+                            ng-model="description"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="m-heading-1 border-green m-bordered" style="margin-top: 20px">
+        <div class="form-group">
+            <div class="col-md-6">
+                <label class="control-edit-label col-md-12"
+                    ><b>META TITLE</b></label
+                >
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="meta_title"
+                            id="meta_title"
+                            ng-model="meta_title"
+                        />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label class="control-edit-label col-md-12"
+                    ><b>META KEYWORD</b></label
+                >
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="meta_keyword"
+                            id="meta_keyword"
+                            ng-model="meta_keyword"
+                        />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label class="control-edit-label col-md-12"
+                    ><b>META DESCRIPTION</b></label
+                >
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="meta_description"
+                            id="meta_description"
+                            ng-model="meta_description"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="m-heading-1 border-green m-bordered" style="margin-top: 20px">
+        <div class="form-group">
+            <div class="col-md-6">
+                <label class="control-edit-label col-md-12"
+                    ><b>MAIN IMAGE</b></label
+                >
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <input
+                            type="file"
+                            file-model="image"
+                            class="form-control"
+                            name="image"
+                            id="image"
+                            ng-model="image"
+                            required
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-6">
+                <label class="control-edit-label col-md-12"><b>TITLE</b></label>
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="image_title"
+                            id="image_title"
+                            ng-model="image_title"
+                        />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label class="control-edit-label col-md-12"
+                    ><b>ALT TAG</b></label
+                >
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="alt_tag"
+                            id="alt_tag"
+                            ng-model="alt_tag"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="m-heading-1 border-green m-bordered" style="margin-top: 20px">
+        <div class="form-group">
+            <div class="col-md-9">
+                <label class="control-edit-label col-md-12"
+                    ><b>CONTENT</b></label
+                >
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <textarea
+                            rows="5"
+                            cols="50"
+                            type="text"
+                            class="form-control summernote"
+                            name="content"
+                            id="content"
+                            ng-model="content"
+                        ></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="m-heading-1 border-green m-bordered" style="margin-top: 20px">
+        <div class="form-group">
+            <div class="col-md-6">
+                <label class="control-edit-label col-md-12"
+                    ><b>MORE IMAGES</b></label
+                >
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <button
+                            type="button"
+                            class="btn green"
+                            ng-click="showImageUpload()"
+                        >
+                            Images
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-actions">
+        <div class="row">
+            <div class="col-md-offset-9" style="margin-left: 73% !important">
+                <button type="submit" id="submit" class="btn btn-color">
+                    <i class="fa fa-check"></i> Submit
+                </button>
+                <button ng-click="goback()" type="button" class="btn default">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+</form>

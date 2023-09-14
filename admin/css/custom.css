@@ -1,0 +1,198 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 12 Apr, 2018, 9:40:10 AM
+    Author     : Suthan
+*/
+
+/* 
+Error classes styles
+*/
+.has-error{ 
+    border: 1px solid #e74c3c !important; 
+}
+tr{
+    cursor: pointer;
+}
+select[name='sample_1_length']{
+    border: 1px solid #c7bbbb !important; 
+}
+
+.WorkingDays {
+    background-color: #00AA8D;
+    border-color: #00AA8D;
+}
+
+.Holidays {
+    background-color: #ffb3b3;
+    border-color: #ffb3b3;
+}
+
+.btn-color{
+    background-color: #8baad6 !important;
+    color: #fff;
+}
+.login-header{
+    color: #ff9319 !important;
+}
+.holidaybtn{
+    margin:10px
+}
+.delete-btn{
+    background-color: #da5346 !important;
+    border-radius: 12px !important;
+    color:#fff;
+}  
+.edit-btn{
+    background-color: #34b78d!important;
+    border-radius: 12px !important;
+    color:#fff;
+}
+
+.assaign-access-btn{
+    background-color: #46b8da !important;
+    border-radius: 12px !important;
+    color:#fff;
+}
+
+.sub_heading{
+    padding-top: 10px;
+}
+
+.order-btn{
+    background-color: #6a3293;
+    color: #fff !important;
+    float: right;
+    margin-right: 20px;
+    border-radius: 10px !important;
+}
+#model-title-order{
+    text-align: center;
+    color: #ff9319 !important;
+    font-weight: bold;
+}
+.dropdown-content{
+    position: absolute;
+    background-color: #f9f9f9;
+    max-height: 300px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    cursor: pointer
+}
+.error_span{
+    color:red;
+}
+
+/* 
+Angular switch styles
+*/
+.switch {
+    background: #fff;
+    border: 1px solid #dfdfdf;
+    position: relative;
+    display: inline-block;
+    box-sizing: content-box;
+    overflow: visible;
+    width: 52px;
+    height: 30px;
+    padding: 0px;
+    margin: 0px;
+    border-radius: 20px !important;;
+    cursor: pointer;
+    box-shadow: rgb(223, 223, 223) 0px 0px 0px 0px inset;
+    transition: 0.3s ease-out all;
+    -webkit-transition: 0.3s ease-out all;
+    top: -1px;
+}
+/*adding a wide width for larger switch text*/
+.switch.wide {
+    width:80px;
+}
+.switch small {
+    background: #fff;
+    border-radius: 100%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transition: 0.3s ease-out all;
+    -webkit-transition: 0.3s ease-out all;
+}
+.switch.checked {
+    background: rgb(100, 189, 99);
+    border-color: rgb(100, 189, 99);
+}
+.switch.checked small {
+    left: 22px;
+}
+/*wider switch text moves small further to the right*/
+.switch.wide.checked small {
+    left:52px;
+}
+/*styles for switch-text*/
+.switch .switch-text {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:13px;
+}
+
+.switch .off {
+    display:block;
+    position: absolute;
+    right: 10%;
+    top: 25%;
+    z-index: 0;
+    color:#A9A9A9;
+}
+
+.switch .on {
+    display:none;
+    z-index: 0;
+    color:#fff;
+    position: absolute;
+    top: 25%;
+    left: 9%;
+}
+
+.switch.checked .off {
+    display:none;
+}
+
+.switch.checked .on {
+    display:block;
+
+}
+
+.switch.disabled {
+    opacity: .50;
+    cursor: not-allowed;
+}
+
+.modal-form{
+    margin-bottom: 10px !important;
+}
+
+.btn[disabled]{
+    cursor: auto!important;
+}
+
+.pageloader{
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: url('../images/others/loader.gif') no-repeat 50% 50% transparent;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+
+
+

@@ -1,0 +1,162 @@
+<!-- BEGIN PAGE HEADER-->
+<style>
+    .reschedule-btn{
+        background-color: #4792f1!important;
+        border-radius: 12px !important;
+        color: #fff;
+    }
+    .control-edit-label{
+        margin-bottom: 0;
+        padding-top: 7px;
+        width: 100%;
+    }
+    .input-group-addon{
+        cursor: pointer;
+    }
+    .input-group-addon>i {
+        color: #242527!important;
+    }
+</style>
+<!-- BEGIN PAGE HEADER-->
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a ui-sref="dashboard">Home</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a ui-sref="users">Users</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a ui-sref="edit_user">Edit User</a>
+            <i class="fa fa-circle"></i>
+        </li>
+
+    </ul>
+
+</div>
+<h3 class="page-title"> Edit User
+
+</h3>
+<!-- END PAGE HEADER-->
+<!-- BEGIN MAIN CONTENT -->
+
+
+<form id="form-username" class="form-horizontal form-bordered" name="edit_user" ng-submit="edit(edit_user.$valid)" novalidate>
+    <div class="m-heading-1 border-green m-bordered" style="margin-top:20px;">
+
+        <div class="form-group">
+            <div class="col-md-6">
+                <label class="control-edit-label col-md-12"><b>NAME</b></label>
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <input type="text" class="form-control"  name="edit_user_name" id="edit_user_name" ng-model="edit_user_name" required> </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label class="control-edit-label col-md-12"><b>EMPLOYEE ID</b></label>
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <input type="text" class="form-control" name="edit_employee_id" id="edit_employee_id" ng-model="edit_employee_id" required></div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-6">
+                <label class="control-edit-label col-md-12"><b>EMAIL</b></label>
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <input type="email" class="form-control" ng-class="{'has-error': (edit_user.edit_email.$invalid && edit_user.edit_email.$dirty)}" name="edit_email" id="edit_email" ng-model="edit_email" required>  </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label class="control-edit-label col-md-12"><b>MOBILE</b></label>
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <input type="text" class="form-control" maxlength="8" name="edit_mobile" id="edit_mobile" ng-model="edit_mobile"> </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+
+            <div class="col-md-6">
+                <label class="control-edit-label col-md-12"><b>STATUS</b></label>
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <switch name="edit_active" ng-model="edit_active" on="Active" off="Inactive" class="wide" ng-change="changeCallback"></switch>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            <div class="col-md-6">
+                <label class="control-edit-label col-md-2"><b>CHANGE PASSWORD</b></label>
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <button type="button" class="btn green" ng-click="showPasswordEdit()">
+                            Change Password</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" ng-show="show_edit_password">
+                <label class="control-edit-label col-md-2"><b>PASSWORD</b></label>
+                <div class="col-md-12">
+                    <div class="input-icon right">
+                        <div class="input-group">
+                            <input type="text" ng-paste="$event.preventDefault()" class="form-control" ng-minlength="8" name="password" id="password" ng-model="password">
+                            <span class="input-group-addon" id="generate">
+                                Generate
+                            </span>
+                            <span class="input-group-addon">
+                                <i ng-show="!show_password" class="fa fa-eye-slash" id="eye-slash"></i>
+                                <i ng-show="show_password" class="fa fa-eye" id="eye"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-md-6">
+                    <label class="control-edit-label col-md-12"><b>STATUS</b></label>
+                    <div class="col-md-12">
+                        <div class="input-icon right">
+                            <switch name="active" ng-model="active" on="Active" off="Inactive" class="wide" ng-change="changeCallback"></switch>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+    <div class="form-actions">
+        <div class="row">
+            <div class="col-md-offset-9" style="margin-left: 73%!important;">
+                <button type="submit" id="submit" class="btn btn-color">
+                    <i class="fa fa-check"></i> Submit</button>
+                <button ng-click="goback()" type="button" class="btn default">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+</form>
+
+
+
+
+
+
+

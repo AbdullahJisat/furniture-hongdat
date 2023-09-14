@@ -1,0 +1,146 @@
+<!-- BEGIN PAGE HEADER-->
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a ui-sref="dashboard">Home</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a ui-sref="blog">Blogs</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a ui-sref="edit_blog">Edit Blog</a>
+            <i class="fa fa-circle"></i>
+        </li>
+
+    </ul>
+
+</div>
+<h3 class="page-title"> Edit Blog
+
+</h3>
+<!-- END PAGE HEADER-->
+<!-- BEGIN MAIN CONTENT -->
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN PORTLET-->
+        <div class="portlet box yellow-crusta">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-gift"></i>Edit Blog</div>
+                <div class="tools">
+                    <a href="javascript:;" class="collapse"> </a>
+                    <a href="javascript:;" class="reload"> </a>
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <div class="pageloader" style="display:none;">
+                </div>
+                <form id="edit_blog" class="form-horizontal form-bordered" name="edit_blog" ng-submit="edit(edit_blog.$valid)" novalidate>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Title<span class="required" aria-required="true">*</span></label>
+                        <div class="col-md-4">
+                            <div class="input-icon right">
+                                <input type="text" class="form-control" name="edit_title" id="edit_title" ng-model="edit_title"> </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Page Slug<span class="required" aria-required="true">*</span></label>
+                        <div class="col-md-4">
+                            <div class="input-icon right">
+                                <input type="text" class="form-control" name="edit_page_slug" id="edit_page_slug" ng-model="edit_page_slug" required> 
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Meta Title<span class="required" aria-required="true">*</span></label>
+                        <div class="col-md-4">
+                            <div class="input-icon right">
+                                <input type="text" class="form-control" name="edit_meta_title" id="edit_meta_title" ng-model="edit_meta_title" required> </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Meta Keywords<span class="required" aria-required="true">*</span></label>
+                        <div class="col-md-4">
+                            <div class="input-icon right">
+                                <textarea rows="3" cols="50" type="text" class="form-control"  name="edit_meta_keywords" id="edit_meta_keywords" ng-model="edit_meta_keywords"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Meta Description<span class="required" aria-required="true">*</span></label>
+                        <div class="col-md-4">
+                            <div class="input-icon right">
+                                <textarea rows="3" cols="50" type="text" class="form-control"  name="edit_meta_description" id="edit_meta_description" ng-model="edit_meta_description"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Content<span class="required" aria-required="true">*</span></label>
+                        <div class="col-md-9">
+                            <div class="input-icon right">
+                                <textarea rows="5" cols="50" type="text" class="form-control summernote" name="edit_description" id="edit_description" ng-model="edit_description"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Active</label>
+                        <div class="col-md-4">
+                            <div class="input-icon right">
+                                <switch name="edit_active" ng-model="edit_active" on="Active" off="Inactive" class="wide"></switch>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Image</label>
+                        <div class="col-md-4">
+                            <div class="col-md-6">
+                                <div class="input-icon right">
+                                    <button type="button" class="btn green" ng-click="showImageEdit()">
+                                        Change Image</button>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="image_show">
+                                    <img ng-src="./{{edit_image}}" alt="No Image" height="50" width="50">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-show="show_edit_image" class="form-group">
+                        <label class="control-label col-md-3">Image(1155*680) (Max : 2MB)<span class="required" aria-required="true">*</span></label>
+                        <div class="col-md-4">
+                            <div class="input-icon right">
+                                <input type="file" file-model="edit_blog_image" class="form-control" name="edit_blog_image" id="edit_blog_image" ng-model="edit_blog_image"> </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <div class="row">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button type="submit" id="submit" class="btn btn-color">
+                                    <i class="fa fa-check"></i> Submit</button>
+                                <button ng-click="goback()" type="button" class="btn default">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+        <!-- END PORTLET-->
+    </div>
+</div>
+
+

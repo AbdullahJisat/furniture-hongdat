@@ -1,0 +1,152 @@
+<!-- BEGIN PAGE HEADER-->
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a ui-sref="dashboard">Home</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a ui-sref="image_slider">Image Slider</a>
+        </li>
+
+    </ul>
+
+</div>
+<h3 class="page-title"> Image Slider
+
+</h3>
+<style>
+    @media
+    only screen 
+    and (max-width: 930px), (min-device-width: 930px) 
+    and (max-device-width: 1024px)  {
+
+        /* Force table to not be like tables anymore */
+        table, thead, tbody, th, td, tr {
+            display: block;
+        }
+
+        /* Hide table headers (but not display: none;, for accessibility) */
+        thead tr {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+
+        tr {
+            margin: 0 0 1rem 0;
+        }
+
+        tr:nth-child(odd) {
+            background: #ccc;
+        }
+
+        td {
+            /* Behave  like a "row" */
+            border: none;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 50%;
+            padding-top: 10px !important;
+            padding-bottom: 10px!important;
+        }
+
+        td:before {
+            /* Now like a table header */
+            /*                    position: absolute;*/
+            /* Top/left values mimic padding */
+            top: 0;
+            left: 6px;
+            width: 45%;
+            padding-right: 10px;
+            white-space: nowrap;
+        }
+        td:nth-of-type(1):before { content: ""; }
+        td:nth-of-type(2):before { content: "ID: "; }
+        td:nth-of-type(3):before { content: "Title: "; }
+        td:nth-of-type(4):before { content: "Description: "; }
+        td:nth-of-type(5):before { content: "Button Text: "; }
+        td:nth-of-type(6):before { content: "Button Url: "; }
+        td:nth-of-type(7):before { content: "Active: "; }
+
+
+
+
+    }
+</style>
+<!-- END PAGE HEADER-->
+<!-- BEGIN MAIN CONTENT -->
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+        <div class="portlet light bordered">
+            <div class="portlet-body">
+                <div class="table-toolbar">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="btn-group">
+
+                                <a href="#/add_image_slider"><button id="sample_editable_1_new" class="btn sbold green"> Add New
+                                        <i class="fa fa-plus"></i>
+                                    </button></a>
+                            </div>
+                        </div>
+                      
+                    </div>
+                </div>
+                <table class="table table-striped table-bordered table-hover table-checkable order-column" id="sample_1" datatable="ng">
+                    <thead>
+                        <tr>
+                            <th ng-show="false">  </th>
+                            <th> ID </th>
+                            <th> Title </th>
+                            <th> Description</th>
+                            <th> Button Text </th>
+                            <th> Button Url </th>
+                            <th> Active </th>
+                            <th> Action </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="odd gradeX" ng-repeat="slider in sliders">
+                            <td ng-show="false">  </td>
+                            <td> {{slider.id}} </td>
+                            <td> {{slider.title}} </td>
+                            <td> {{slider.description}} </td>
+                            <td> {{slider.button_text}} </td>
+                            <td> {{slider.url}} </td>
+                            <td> {{slider.active == 1 ? "Active": "Inactive"}} </td>
+                            <td> <button type="button" class="btn edit-btn" ng-click="editSlider(slider.id)">Edit</button> </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table id="print_table" style="display:none">
+                    <thead>
+                        <tr>
+                            <th> ID </th>
+                            <th> Title </th>
+                            <th> Description</th>
+                            <th> Active </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="odd gradeX" ng-repeat="slider in sliders">
+                            <td> {{slider.id}} </td>
+                            <td> {{slider.title}} </td>
+                            <td> {{slider.description}} </td>
+                            <td> {{slider.active == 1 ? "Active": "Inactive"}} </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- END EXAMPLE TABLE PORTLET-->
+    </div>
+</div>
+
+<script>
+    TableDatatablesManaged.init();
+</script>

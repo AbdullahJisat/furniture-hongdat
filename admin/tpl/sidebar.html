@@ -1,0 +1,63 @@
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+<div class="page-sidebar navbar-collapse collapse">
+
+    <ul class="page-sidebar-menu" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" ng-class="{'page-sidebar - menu - closed': settings.layout.pageSidebarClosed}">
+
+        <li class="start nav-item">
+            <a ui-sref="dashboard">
+                <i class="icon-home"></i>
+                <span class="title">Dashboard</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a ui-sref="users">
+                <i class="fa fa-user"></i>
+                <span class="title">Users</span>
+            </a>
+        </li>
+
+
+        <li class="nav-item">
+            <a ui-sref="content">
+                <i class="fa fa-newspaper-o"></i>
+                <span class="title">Content</span>
+            </a>
+        </li>
+
+
+        <li class="nav-item">
+            <a href="#" class="nav-link nav-toggle">
+                <i class="fa fa-briefcase"></i>
+                <span class="title">Products</span>
+                <span class="arrow"></span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a ui-sref="category">
+                        <i class="fa fa-server"></i> Category
+                    </a>
+                </li>
+
+                <li>
+                    <a ui-sref="product">
+                        <i class="fa fa-file"></i> Product
+                    </a>
+                </li>
+
+            </ul>
+        </li>
+
+        <li class="nav-item">
+            <a ui-sref="contact_us">
+                <i class="fa fa-fax"></i>
+                <span class="title">Contact Us</span>
+            </a>
+        </li>
+
+
+
+    </ul>
+    <!-- END SIDEBAR MENU -->
+</div>

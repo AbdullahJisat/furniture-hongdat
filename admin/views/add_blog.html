@@ -1,0 +1,119 @@
+<!-- BEGIN PAGE HEADER-->
+
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a ui-sref="dashboard">Home</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a ui-sref="blog">Blogs</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a ui-sref="add_blog">Add Blog</a>
+            <i class="fa fa-circle"></i>
+        </li>
+
+    </ul>
+
+</div>
+<h3 class="page-title"> Add Blog
+
+</h3>
+<!-- END PAGE HEADER-->
+
+<!-- BEGIN MAIN CONTENT -->
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN PORTLET-->
+        <div class="portlet box yellow-crusta">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-gift"></i>Add Blog</div>
+                <div class="tools">
+                    <a href="javascript:;" class="collapse"> </a>
+                    <a href="javascript:;" class="reload"> </a>
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <div class="pageloader" style="display:none;">
+                </div>
+                <form id="add_blog" class="form-horizontal form-bordered" name="add_blog" ng-submit="submit(add_blog.$valid)" novalidate>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Title<span class="required" aria-required="true">*</span></label>
+                        <div class="col-md-4">
+                            <div class="input-icon right">
+                                <input type="text" class="form-control" name="title" id="title" ng-model="title" required> </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Meta Title<span class="required" aria-required="true">*</span></label>
+                        <div class="col-md-4">
+                            <div class="input-icon right">
+                                <input type="text" class="form-control" name="meta_title" id="meta_title" ng-model="meta_title" required> </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Meta Keywords<span class="required" aria-required="true">*</span></label>
+                        <div class="col-md-4">
+                            <div class="input-icon right">
+                                <textarea rows="3" cols="50" type="text" class="form-control"  name="meta_keywords" id="meta_keywords" ng-model="meta_keywords"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Meta Description<span class="required" aria-required="true">*</span></label>
+                        <div class="col-md-4">
+                            <div class="input-icon right">
+                                <textarea rows="3" cols="50" type="text" class="form-control"  name="meta_description" id="meta_description" ng-model="meta_description"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Image(1155*680)(Max : 2MB)<span class="required" aria-required="true">*</span></label>
+                        <div class="col-md-4">
+                            <div class="input-icon right">
+                                <input type="file" file-model="blog_image" class="form-control" name="blog_image" id="blog_image" ng-model="blog_image" required> </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Content<span class="required" aria-required="true">*</span></label>
+                        <div class="col-md-10">
+                            <div class="input-icon right">
+                                <textarea rows="8" cols="50" type="text" class="form-control summernote"  name="description" id="description" ng-model="description"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-actions">
+                        <div class="row">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button type="submit" id="submit" class="btn btn-color">
+                                    <i class="fa fa-check"></i> Submit</button>
+                                <button ng-click="goback()" type="button" class="btn default">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        <!-- END PORTLET-->
+    </div>
+</div>
+
+
+
+
+
+
