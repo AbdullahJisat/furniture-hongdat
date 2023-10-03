@@ -279,8 +279,8 @@
                     style="height: auto;max-width: 20%;border-radius: 100px; text-align:center">
             </div>
             <div class="col-8 col-md-8">
-                <h6>Ahmed</h6>
-                <a aria-label="Chat on WhatsApp" href="https://wa.me/1XXXXXXXXXX"> <img alt="Chat on WhatsApp"
+                <h6>Consultant</h6>
+                <a aria-label="Chat on WhatsApp" href="https://wa.me/+971559011255"> <img alt="Chat on WhatsApp"
                         src="assets/img/wp.png" style="height: auto;max-width: 15%;" />
                 </a>
             </div>
@@ -341,8 +341,8 @@
                     style="height: auto;max-width: 20%;border-radius: 100px; text-align:center">
             </div>
             <div class="col-8 col-md-8">
-                <h6>Ahmed</h6>
-                <a aria-label="Chat on WhatsApp" href="https://wa.me/1XXXXXXXXXX"> <img alt="Chat on WhatsApp"
+                <h6>Consultant</h6>
+                <a aria-label="Chat on WhatsApp" href="https://wa.me/+971559011255"> <img alt="Chat on WhatsApp"
                         src="assets/img/wp.png" style="height: auto;max-width: 15%;" />
                 </a>
             </div>
@@ -405,8 +405,8 @@
                     style="height: auto;max-width: 20%;border-radius: 100px; text-align:center">
             </div>
             <div class="col-8 col-md-8">
-                <h6>Ahmed</h6>
-                <a aria-label="Chat on WhatsApp" href="https://wa.me/1XXXXXXXXXX"> <img alt="Chat on WhatsApp"
+                <h6>Consultant</h6>
+                <a aria-label="Chat on WhatsApp" href="https://wa.me/+971559011255"> <img alt="Chat on WhatsApp"
                         src="assets/img/wp.png" style="height: auto;max-width: 15%;" />
                 </a>
             </div>
@@ -470,8 +470,8 @@
                     style="height: auto;max-width: 20%;border-radius: 100px; text-align:center">
             </div>
             <div class="col-8 col-md-8">
-                <h6>Ahmed</h6>
-                <a aria-label="Chat on WhatsApp" href="https://wa.me/1XXXXXXXXXX"> <img alt="Chat on WhatsApp"
+                <h6>Consultant</h6>
+                <a aria-label="Chat on WhatsApp" href="https://wa.me/0559011255"> <img alt="Chat on WhatsApp"
                         src="assets/img/wp.png" style="height: auto;max-width: 15%;" />
                 </a>
             </div>

@@ -49,11 +49,17 @@
 
         }
 
-        .read-more {
-            white-space: inherit;
+        .about-content .read-more {
+            /* white-space: inherit;
             overflow: hidden;
             text-overflow: ellipsis;
-            height: 12.6em;
+            height: 12.6em; */
+
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            /* truncate to 5 lines */
+            -webkit-line-clamp: 5;
         }
     </style>
 
@@ -61,10 +67,13 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TVYTYM0REQ"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-TVYTYM0REQ');
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-TVYTYM0REQ');
     </script>
 
 </head>
@@ -123,9 +132,11 @@
                             established in 2000, our journey began with a specialization in electrical works. As our
                             expertise expanded, HD
                             Contractor PTE LTD was born in 2010, diversifying into Structural, Wet Trade, Fit Out, Main
-                            Contracting, and more.Today, Hong Dat Furniture stands as a testament to our commitment to
+                            Contracting, and more.
+                            Today, Hong Dat Furniture stands as a testament to our commitment to
                             craftsmanship, innovation, and delivering
                             exceptional carpentry solutions.</p>
+                        <a href="#" class="show_hide" data-content="toggle-text">Read More</a>
                     </div>
                 </div>
                 <div class="col-12 col-md-4">
@@ -144,6 +155,7 @@
                             bespoke furniture and solutions that enrich the lives of our clients. Our mission drives us
                             to continuously innovate,
                             elevate standards, and exceed expectations.</p>
+                        <a href="#" class="show_hide" data-content="toggle-text">Read More</a>
                     </div>
                 </div>
                 <div class="col-12 col-md-4">
@@ -154,9 +166,8 @@
                             <div class="icon-size"><i class="fa fa-users" aria-hidden="true"></i></div>
                             <h2>Values</h2>
                         </div>
-                        <p class="mb-0 read-more"> Craftsmanship: We uphold the art of carpentry, ensuring every piece
-                            is a
-                            masterpiece of skill and dedication.
+                        <p class="mb-0 read-more"> Craftsmanship: We uphold the art of carpentry, ensuring every
+                            piece is a masterpiece of skill and dedication.
                             Quality: Excellence is our hallmark. We are dedicated to delivering the finest quality in
                             every project we undertake.
                             Innovation: Embracing creativity and innovation, we push boundaries to bring fresh ideas and
@@ -178,6 +189,7 @@
                             With a rich history, a forward-looking mission, and unwavering values, Hong Dat Furniture is
                             poised to continue crafting
                             exceptional spaces that leave a lasting impression</p>
+                        <a href="#" class="show_hide" data-content="toggle-text">Read More</a>
                     </div>
                 </div>
             </div>
@@ -198,7 +210,8 @@
 top: 50%;
 left: 50%;
 min-height: 100%;
-transform: translate(-50%, -50%);" /></figure>
+transform: translate(-50%, -50%);" />
+                            </figure>
 
                         </div>
 
@@ -261,13 +274,10 @@ transform: translate(-50%, -50%);" /></figure>
                         <p>The satisfaction of our clients stands as a testament to our commitment, as we consistently
                             exceed their
                             expectations.</p>
+                        <p>These achievements and milestones underscore our relentless pursuit of excellence and our
+                            dedication to shaping
+                            exceptional spaces that inspire and endure.</p>
                     </div>
-                </div>
-
-                <div class="col-12 col-md-12 pb-2">
-                    <p>These achievements and milestones underscore our relentless pursuit of excellence and our
-                        dedication to shaping
-                        exceptional spaces that inspire and endure.</p>
                 </div>
             </div>
         </div>
@@ -367,6 +377,18 @@ transform: translate(-50%, -50%);" /></figure>
     <script src="assets/js/plugins/plugins.js"></script>
     <!-- Active js -->
     <script src="assets/js/active.js"></script>
+
+    <script>
+        $(".show_hide").click(function () {
+            $(this).text($(this).text() == 'Read More' ? 'Read Less' : 'Read More');
+            $(this).prev('p').toggleClass("read-more");
+        });
+        // $(".show_hide").on("click", function() {
+        //     $(this).text(function(i, t) {
+        //         return t == 'Read Less' ? 'Read More' : 'Read Less';
+        //     }).toggleClass("read-more");
+        // });
+    </script>
 </body>
 
 </html>

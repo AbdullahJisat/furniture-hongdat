@@ -128,7 +128,8 @@
                     <div class="col-12 d-flex justify-content-between">
                         <!-- Logo Area -->
                         <div class="logo">
-                            <a href="{{ URL::to('/') . '/' }}"><img src="assets/img/core-img/logo.png" alt=""></a>
+                            <a href="{{ URL::to('/') . '/' }}"><img style="height: 80px;
+  width: 100%;" src="assets/img/core-img/logonew.png" alt=""></a>
                         </div>
 
                         <!-- Top Contact Info -->
