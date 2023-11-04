@@ -371,7 +371,7 @@ class HomeController extends Controller
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-                <meta name="format-detection" content="telephone=no" /> 
+                <meta name="format-detection" content="telephone=no" />
                 <title>Joydom - Conatct Us</title>
 
                 </head>
@@ -384,23 +384,23 @@ class HomeController extends Controller
                           max-width:0px;
                           opacity:0;
                           overflow:hidden;">(User has submitted new enquiry form from Hongdat website. Client waiting for your response!)</span>
-            
+
                     <center style="background-color:#E1E1E1;">
                         <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" style="table-layout: fixed;max-width:100% !important;width: 100% !important;min-width: 100% !important;">
                             <tr>
                                 <td align="center" valign="top" id="bodyCell">
 
-                                
+
                                     <table bgcolor="#FFFFFF"  border="0" cellpadding="0" cellspacing="0" width="500" id="emailBody">
 
-                                     
+
                                         <tr>
                                             <td align="center" valign="top">
-                                           
+
                                                 <table border="0" cellpadding="0" cellspacing="0" width="100%" style="color:#FFFFFF;" bgcolor="#3498db">
                                                     <tr>
                                                         <td align="center" valign="top">
-                                                       
+
                                                             <table border="0" cellpadding="0" cellspacing="0" width="500" class="flexibleContainer">
                                                                 <tr>
                                                                     <td align="center" valign="top" width="500" class="flexibleContainerCell">
@@ -415,23 +415,23 @@ class HomeController extends Controller
                                                                                 </td>
                                                                             </tr>
                                                                         </table>
-                                                                       
+
 
                                                                     </td>
                                                                 </tr>
                                                             </table>
-                                                       
+
                                                         </td>
                                                     </tr>
                                                 </table>
-                                                
+
                                             </td>
                                         </tr>
-                                      
 
 
 
-                                    
+
+
                                         <tr>
                                             <td align="center" valign="top">
                                                 <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#F8F8F8">
@@ -447,7 +447,7 @@ class HomeController extends Controller
                                                                                     <table border="0" cellpadding="0" cellspacing="0" width="100%">
                                                                                         <tr>
                                                                                             <td valign="top" class="textContent">
-                                                                                             
+
                                                                                                 <?php
                                                                                                 if (!empty($name)) {
                                                                                                     ?>
@@ -461,7 +461,7 @@ class HomeController extends Controller
                                                                                                     <div mc:edit="body" style="text-align:left;font-family:Helvetica,Arial,sans-serif;font-size:15px;margin-bottom:0;color:#5F5F5F;line-height:135%;">' . $email . '</div><br />
                                                                                                     <?php
                                                                                                 }
-                                                                                             
+
                                                                                                  if (!empty($sub)) {
                                                                                                     ?>
                                                                                                     <h3 mc:edit="header" style="color:#5F5F5F;line-height:125%;font-family:Helvetica,Arial,sans-serif;font-size:20px;font-weight:normal;margin-top:0;margin-bottom:3px;text-align:left;"> Subject </h3>
@@ -484,8 +484,8 @@ class HomeController extends Controller
                                                 </table>
                                             </td>
                                         </tr>
-                                     
-                                
+
+
                                         <tr>
                                             <td align="center" valign="top">
                                                 <table border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -498,13 +498,13 @@ class HomeController extends Controller
                                                                             <tr>
                                                                                 <td align="center" valign="top" style="padding-top:0px;padding-bottom:0px;">
 
-                                                                        
+
                                                                                     <table border="0" cellpadding="0" cellspacing="0" width="100%">
                                                                                         <tr>
                                                                                             <td align="center" valign="top" style="border-top:1px solid #C8C8C8;"></td>
                                                                                         </tr>
                                                                                     </table>
-                                                                        
+
 
                                                                                 </td>
                                                                             </tr>
@@ -515,14 +515,14 @@ class HomeController extends Controller
                                                         </td>
                                                     </tr>
                                                 </table>
-                                              
+
                                             </td>
                                         </tr>
-                                  
 
 
 
-                                       
+
+
                                         <tr>
                                             <td align="center" valign="top">
                                                 <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#F8F8F8">
@@ -538,7 +538,7 @@ class HomeController extends Controller
                                                                                     <table border="0" cellpadding="0" cellspacing="0" width="100%">
                                                                                         <tr>
                                                                                             <td valign="top" class="textContent">
-                                                                                       
+
                                                                                                 <?php
                                                                                                 if (!empty($enquiry)) {
                                                                                                     ?>
@@ -550,7 +550,7 @@ class HomeController extends Controller
                                                                                             </td>
                                                                                         </tr>
                                                                                     </table>
-                                                                          
+
 
                                                                                 </td>
                                                                             </tr>
@@ -558,17 +558,17 @@ class HomeController extends Controller
                                                                     </td>
                                                                 </tr>
                                                             </table>
-                                                   
+
                                                         </td>
                                                     </tr>
                                                 </table>
-                                        
+
                                             </td>
                                         </tr>
 
 
                                     </table>
-                                 
+
                                     <table bgcolor="#E1E1E1" border="0" cellpadding="0" cellspacing="0" width="500" id="emailFooter">
 
                                         <tr>
@@ -593,16 +593,16 @@ class HomeController extends Controller
                                                                     </td>
                                                                 </tr>
                                                             </table>
-                                                      
+
                                                         </td>
                                                     </tr>
                                                 </table>
-                                           
+
                                             </td>
                                         </tr>
 
                                     </table>
-                                  
+
 
                                 </td>
                             </tr>

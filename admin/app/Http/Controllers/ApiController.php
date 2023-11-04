@@ -44,7 +44,7 @@ class ApiController extends Controller
         try {
             $status = 1;
             $contact_us = ContactUs::getActiveContactUs();
-            $category = Category::getActiveBlogCategory();
+            $category = Category::getActiveCategory();
             $blogs = Content::getActiveBlogs();
             array_push($landing_page, $contact_us, $category, $blogs);
         } catch (\Exception $e) {
