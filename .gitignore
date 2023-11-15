@@ -1,14 +1,25 @@
-/node_modules
-/public/hot
-/public/storage
-/storage/*.key
-/vendor
-.env
-.env.backup
-.phpunit.result.cache
-Homestead.json
-Homestead.yaml
-npm-debug.log
-yarn-error.log
+# /node_modules
+# /public/hot
+# /public/storage
+# /storage/*.key
+# /vendor
+# .env
+# .env.backup
+# .phpunit.result.cache
+# Homestead.json
+# Homestead.yaml
+# npm-debug.log
+# yarn-error.log
 .vscode
-/admin
+# /admin
+# /admin/node_modules
+# /admin/public/hot
+# /admin/public/storage
+# /admin/storage/*.key
+# /admin/.env.backup
+# /admin/.phpunit.result.cache
+# /admin/Homestead.json
+# /admin/Homestead.yaml
+# /admin/npm-debug.log
+# /admin/yarn-error.log
+# /admin/.gitignore
